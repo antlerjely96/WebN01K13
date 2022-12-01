@@ -1,0 +1,35 @@
+body {
+    background-image: url("../../image/4k-space-wallpaper-1.jpg");
+}
+hr {
+    color: #000000;
+    width: 200px;
+}
+h1 {
+    color: #006600;
+    text-align: center;
+}
+h2 {
+    color: #0000FF;
+    text-decoration: underline;
+}
+#content {
+    background-color: #FFFFCC;
+    text-align: center;
+}
+#p1 {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    color: #FF3399;
+    background-color: #FECFFD;
+}
+#p2 {
+    color: #2FD6EA;
+}
+#p3 {
+    color: #FD5E6A;
+}
+#p4 {
+    color: #FF99FF;
+}
