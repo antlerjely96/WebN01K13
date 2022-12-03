@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cac tag co ban - Thuoc tinh cua tag</title>
+    <style>
+        #all {
+            background: red;
+            width: 70%;
+            height: 700px;
+        }
+        #top {
+            background: blue;
+            width: 50%;
+            height: 40%;
+        }
+        #bottom {
+            background: green;
+            width: 40%;
+            height: 60%;
+            position: relative;
+            top: 20px;
+            left: 50px;
+        }
+        #bottom-top {
+            background: yellow;
+            width: 70%;
+            height: 70%;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+        #top-top {
+            background: purple;
+            width: 50%;
+            height: 50%;
+            position: absolute;
+            top: 100px;
+            right: 20px;
+            z-index: -1;
+        }
+        #top-bottom {
+            background: pink;
+            width: 50%;
+            height: 50%;
+        }
+        #bottom-top-top {
+            background: black;
+            width: 70%;
+            height: 70%;
+            position: absolute;
+            top: 20px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="all">
+        <div id="top">
+            <div id="top-top"></div>
+            <div id="top-bottom"></div>
+        </div>
+        <div id="bottom">
+            <div id="bottom-top">
+                <div id="bottom-top-top"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
