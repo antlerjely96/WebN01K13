@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function kiemTra(){
+            //Lấy số a
+            let a = Number(document.getElementById('a').value);
+            //Lấy số b
+            let b = Number(document.getElementById('b').value);
+            //Lấy số c
+            let c = Number(document.getElementById('c').value);
+            let result;
+            if(a < 0 || b < 0 || c < 0){
+                result = "a, b, c không là cạnh tam giác";
+            } else {
+                if(a + b > c && a + c > b && b + c > a){
+                    result = "a, b, c là cạnh tam giác";
+                } else {
+                    result = "a, b, c không là cạnh tam giác";
+                }
+            }
+            result = document.getElementById('ket-qua').value = result;
+        }
+    </script>
+</head>
+<body>
+    <form>
+        a: <input type="text" id="a"><br>
+        b: <input type="text" id="b"><br>
+        c: <input type="text" id="c"><br>
+        Kết quả: <input type="text" id="ket-qua" readonly><br>
+        <button type="button" onclick="kiemTra()">Kiểm tra</button>
+    </form>
+</body>
+</html>
