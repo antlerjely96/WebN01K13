@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function validate(){
+            let count = 0;
+            //validate họ tên
+            //Lấy họ tên
+            let hoTen = document.getElementById('ho-ten').value;
+            //Kiểm tra độ dài cua hoTen: nếu độ dài = 0 là bỏ trống
+            if(hoTen.length == 0){
+                document.getElementById('error-ho-ten').innerHTML = "Không được để trống họ tên";
+                count++;
+            } else {
+                document.getElementById('error-ho-ten').innerHTML = "";
+            }
+            //validate ngày sinh
+            //lấy ngày sinh
+            let ngaySinh = document.getElementById('ngay-sinh').value;
+            //kiểm tra độ dài của ngày sinh
+            if(ngaySinh.length == 0){
+                document.getElementById('error-ngay-sinh').innerHTML = "Không được để trống ngày sinh";
+                count++;
+            } else {
+                document.getElementById('error-ngay-sinh').innerHTML = "";
+            }
+            //validate địa chỉ
+            //lấy địa chỉ
+            let diaChi = document.getElementById('dia-chi').value;
+            //kiểm tra độ dài của địa chỉ
+            if(diaChi.length == 0){
+                document.getElementById('error-dia-chi').innerHTML = "Không được để trống địa chỉ";
+                count++;
+            } else {
+                document.getElementById('error-dia-chi').innerHTML = "";
+            }
+            //validate email
+            //lấy địa chỉ
+            let email = document.getElementById('email').value;
+            //kiểm tra độ dài của địa chỉ
+            if(email.length == 0){
+                document.getElementById('error-email').innerHTML = "Không được để trống email";
+                count++;
+            } else {
+                document.getElementById('error-email').innerHTML = "";
+            }
+            //validate email
+            //lấy địa chỉ
+            let soDienThoai = document.getElementById('so-dien-thoai').value;
+            //kiểm tra độ dài của địa chỉ
+            if(soDienThoai.length == 0){
+                document.getElementById('error-so-dien-thoai').innerHTML = "Không được để trống số điện thoại";
+                count++;
+            } else {
+                document.getElementById('error-so-dien-thoai').innerHTML = "";
+            }
+            //validate email
+            //lấy địa chỉ
+            let password = document.getElementById('password').value;
+            //kiểm tra độ dài của địa chỉ
+            if(password.length == 0){
+                document.getElementById('error-password').innerHTML = "Không được để trống password";
+                count++;
+            } else {
+                document.getElementById('error-password').innerHTML = "";
+            }
+            //validate giới tính
+            //lấy về mảng giới tính
+            let gioiTinh = Array();
+            gioiTinh = document.getElementsByName('gioi-tinh');
+            let countGioiTinh = 0;
+            for (let i = 0; i < gioiTinh.length; i++){
+                if(gioiTinh[i].checked){
+                    countGioiTinh++;
+                }
+            }
+            if(countGioiTinh == 0){
+                document.getElementById('error-gioi-tinh').innerHTML = "Phải chọn giới tính";
+                count++;
+            } else {
+                document.getElementById('error-gioi-tinh').innerHTML = "";
+            }
+            if (count != 0){
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form action="bai1.html">
+        Họ tên: <input type="text" id="ho-ten"><span id="error-ho-ten"></span><br>
+        Ngày sinh: <input type="date" id="ngay-sinh"><span id="error-ngay-sinh"></span><br>
+        Địa chỉ: <input type="text" id="dia-chi"><span id="error-dia-chi"></span><br>
+        Email: <input type="email" id="email"><span id="error-email"></span><br>
+        Số điện thoại: <input type="text" id="so-dien-thoai"><span id="error-so-dien-thoai"></span><br>
+        Giới tính: <input type="radio" name="gioi-tinh"> Nam <input type="radio" name="gioi-tinh"> Nữ <input type="radio" name="gioi-tinh"> Khác <span id="error-gioi-tinh"></span><br>
+        Password: <input type="password" id="password"><span id="error-password"></span><br>
+        <button onclick="return validate()">Đăng ký</button> <button type="reset">Nhập lại</button>
+    </form>
+</body>
+</html>
