@@ -12,11 +12,21 @@
             //validate họ tên
             //Lấy họ tên
             let hoTen = document.getElementById('ho-ten').value;
+            //Định nghĩa regex họ tên
+            let regexHoTen = /^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]+[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ ]*$/;
+            //Định nghĩa kết quả kiểm tra hoTen so với regexHoTen
+            let resultHoTen = regexHoTen.test(hoTen);
             //Kiểm tra độ dài cua hoTen: nếu độ dài = 0 là bỏ trống
             if(hoTen.length == 0){
                 document.getElementById('error-ho-ten').innerHTML = "Không được để trống họ tên";
                 count++;
-            } else {
+            }
+            //kiểm tra kết quả
+            else if(resultHoTen == false){
+                document.getElementById('error-ho-ten').innerHTML = "Họ tên không đúng định dạng";
+                count++;
+            }
+            else {
                 document.getElementById('error-ho-ten').innerHTML = "";
             }
             //validate ngày sinh
@@ -32,41 +42,81 @@
             //validate địa chỉ
             //lấy địa chỉ
             let diaChi = document.getElementById('dia-chi').value;
+            //Định nghĩa regex địa chỉ
+            let regexDiaChi = /^[a-zA-Z0-9]+[a-zA-Z0-9/\-,]*$/;
+            //Định nghĩa kết quả
+            let resultDiaChi = regexDiaChi.test(diaChi);
             //kiểm tra độ dài của địa chỉ
             if(diaChi.length == 0){
                 document.getElementById('error-dia-chi').innerHTML = "Không được để trống địa chỉ";
                 count++;
-            } else {
+            }
+            //kiểm tra kết quả
+            else if(resultDiaChi == false){
+                document.getElementById('error-dia-chi').innerHTML = "Địa chỉ không đúng định dạng";
+                count++;
+            }
+            else {
                 document.getElementById('error-dia-chi').innerHTML = "";
             }
             //validate email
-            //lấy địa chỉ
+            //lấy email
             let email = document.getElementById('email').value;
-            //kiểm tra độ dài của địa chỉ
+            //định nghĩa regex email
+            let regexEmail = /^[a-zA-Z0-9]+[a-zA-Z0-9._\-]*@[a-z]{3,7}.[a-z]{3,6}[a-z.]*$/;
+            //định nghĩa kết quả
+            let resultEmail = regexEmail.test(email);
+            //kiểm tra độ dài của email
             if(email.length == 0){
                 document.getElementById('error-email').innerHTML = "Không được để trống email";
                 count++;
-            } else {
+            }
+            //kiểm tra kết quả
+            else if(resultEmail == false){
+                document.getElementById('error-email').innerHTML = "Email không đúng định dạng";
+                count++;
+            }
+            else {
                 document.getElementById('error-email').innerHTML = "";
             }
-            //validate email
-            //lấy địa chỉ
+            //validate số điện thoại
+            //lấy số điện thoại
             let soDienThoai = document.getElementById('so-dien-thoai').value;
-            //kiểm tra độ dài của địa chỉ
+            //Định nghĩa regex số điện thoại
+            let regexSoDienThoai = /^0[1-9]{1}[0-9]{8,10}$/;
+            //Định nghĩa kết quả
+            let resultSoDienThoai = regexSoDienThoai.test(soDienThoai);
+            //kiểm tra độ dài của số điện thoại
             if(soDienThoai.length == 0){
                 document.getElementById('error-so-dien-thoai').innerHTML = "Không được để trống số điện thoại";
                 count++;
-            } else {
+            }
+            //kiểm tra kết quả
+            else if(resultSoDienThoai == false){
+                document.getElementById('error-so-dien-thoai').innerHTML = "Số điện thoại không đúng định dạng";
+                count++;
+            }
+            else {
                 document.getElementById('error-so-dien-thoai').innerHTML = "";
             }
-            //validate email
-            //lấy địa chỉ
+            //validate pwd
+            //lấy pwd
             let password = document.getElementById('password').value;
-            //kiểm tra độ dài của địa chỉ
+            //định nghĩa regex pwd
+            let regexPwd = /^[a-zA-Z0-9@$_]{8,}$/;
+            //định nghĩa kết quả
+            let resultPwd = regexPwd.test(password);
+            //kiểm tra độ dài của pwd
             if(password.length == 0){
                 document.getElementById('error-password').innerHTML = "Không được để trống password";
                 count++;
-            } else {
+            }
+            //kiểm tra kết quả
+            else if(resultPwd == false){
+                document.getElementById('error-password').innerHTML = "Password không đúng định dạng";
+                count++;
+            }
+            else {
                 document.getElementById('error-password').innerHTML = "";
             }
             //validate giới tính
