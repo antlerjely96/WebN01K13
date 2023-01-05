@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Lits</title>
 </head>
 <body>
     <?php
@@ -16,6 +16,7 @@
         //Chạy query để lấy dữ liệu
         $result = mysqli_query($connect, $sql);
     ?>
+    <a href="create.php">Add a class</a>
     <table border="1px" cellpadding="0" cellspacing="0" width="100%">
         <thead>
             <tr>
